@@ -4,15 +4,19 @@ import Context from '../../constant/context';
 import {CONTRACT_ADDRESS,connect} from '../../constant/constants';
 import "./home.css"
 import { NavLink, useNavigate } from 'react-router-dom';
+import { Spin } from 'antd';
 
 export default function Home() {
   const {details,dispatch}=useContext(Context);
+  const [isloading,setisloading]=useState(false);
   console.log("Home",details);
   useEffect(()=>{
     if(details.account=="" && details.isConnected==false)
     {
       const  func=async()=>{
-        const {acnt,instance}= await connect();
+        try{
+          setisloading(true)
+          const {acnt,instance}= await connect();
         const result=await instance.methods.isAdmin(acnt[0]).call();
         var flags=true;
         if(!result)
@@ -40,6 +44,12 @@ export default function Home() {
             flag:flags
           }
         })
+        setisloading(false)
+        }
+        catch(err){
+          console.log(err);
+          setisloading(false)
+        } 
       }
       func()
     }
@@ -50,6 +60,7 @@ export default function Home() {
   console.log(details,details.isadmin);
   return (
     <div className='homepage'>
+      {isloading && <Spin size='large' className='spinner'/> }
     {details && details.isadmin ?(
       <div className='home'>
         <div className='welcome'>
