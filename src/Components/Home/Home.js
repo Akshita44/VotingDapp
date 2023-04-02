@@ -68,7 +68,7 @@ export default function Home() {
           <h3>Give Vote And Bring The Required Change.</h3>
         </div>
         <div className='homeimg'>
-          <img src="images/photo1.jpg" alt=""/>
+          <img src="public/images/photo1.jpg" alt=""/>
         </div>
       </div>
     )}
