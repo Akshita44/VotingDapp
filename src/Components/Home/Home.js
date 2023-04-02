@@ -15,8 +15,8 @@ export default function Home() {
     {
       const  func=async()=>{
         try{
-          setisloading(true)
-          console.log("hello");
+          // setisloading(true)
+          // console.log("hello");
           const {acnt,instance}= await connect();
         const result=await instance.methods.isAdmin(acnt[0]).call();
         var flags=true;
@@ -45,11 +45,11 @@ export default function Home() {
             flag:flags
           }
         })
-        setisloading(false)
+        // setisloading(false)
         }
         catch(err){
           console.log(err);
-          setisloading(false)
+          // setisloading(false)
         } 
       }
       func()
@@ -70,7 +70,7 @@ export default function Home() {
         <NavLink to="/Election"><button className='btn'>Create Election</button></NavLink>
         </div>
         <div className='homeimg'>
-          <img src="images/photo9.jpg" alt=""/>
+          <img src='/images/photo9.jpg' alt=""/>
         </div>
       </div>
     ):(
@@ -80,7 +80,7 @@ export default function Home() {
           <h3>Give Vote And Bring The Required Change.</h3>
         </div>
         <div className='homeimg'>
-          <img src="../../images/photo1.jpg" alt=""/>
+          <img src="/images/photo1.jpg" alt=""/>
         </div>
       </div>
     )}

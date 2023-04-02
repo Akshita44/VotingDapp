@@ -7,6 +7,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 function Election() {
     const {details,dispatch}=useContext(Context)
     const [elections,setelections]=useState([])
+    const [electioncount,setelectioncount]=useState(0)
     const[ongoelec,setongoingelec]=useState([])
     const [isloading,setisloading]=useState(false)
     const statusmap={"1":"Created","2":"Voting","3":"Ended"}
@@ -27,6 +28,7 @@ function Election() {
         const getelec=async()=>{
             const n= await details.instance?.methods.noOfElections().call();
             console.log(n);
+            setelectioncount(n);
             var elec=[];
             var ongoingelec=[];
             for(let i=1;i<=n;i++)
@@ -61,9 +63,10 @@ function Election() {
 
   const onChange=async()=>
   {
-    const {id,purpose,candidatesids,status,totalVotes}= await details.instance.methods.getElection(elections.length+1).call({
+    const {id,purpose,candidatesids,status,totalVotes}= await details.instance.methods.getElection(electioncount+1).call({
         from : details.account
       });
+      setelectioncount(electioncount+1)
     setelections([...elections,{id,purpose,candidatesids,status,totalVotes}])
     setongoingelec([...ongoelec,{id,purpose,candidatesids,status,totalVotes}])
   }
