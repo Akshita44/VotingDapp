@@ -16,6 +16,7 @@ export default function Home() {
       const  func=async()=>{
         try{
           setisloading(true)
+          console.log("hello");
           const {acnt,instance}= await connect();
         const result=await instance.methods.isAdmin(acnt[0]).call();
         var flags=true;
@@ -79,7 +80,7 @@ export default function Home() {
           <h3>Give Vote And Bring The Required Change.</h3>
         </div>
         <div className='homeimg'>
-          <img src="public/images/photo1.jpg" alt=""/>
+          <img src="../../images/photo1.jpg" alt=""/>
         </div>
       </div>
     )}

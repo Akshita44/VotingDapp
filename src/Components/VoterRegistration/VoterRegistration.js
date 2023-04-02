@@ -61,7 +61,7 @@ function VoterRegistration() {
               <p className='resb'>You can vote once the admin verifies your request.</p>   
       </Modal>
        <div className='voterregimg'>
-        <img src="public/images/photo7.jpg" alt="" />
+        <img src="../../images/photo7.jpg" alt="" />
       </div>
       <div className='voterregdiv'>
       <h1>VoterRegistration</h1>

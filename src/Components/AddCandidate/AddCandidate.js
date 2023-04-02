@@ -93,7 +93,7 @@ function AddCandidate() {
         </Form>
       </div>
       <div className='addcandidateimg'>
-        <img src="public/images/photo8.jpg" alt="" />
+        <img src="../../images/photo8.jpg" alt="" />
       </div>
         
     </div>
