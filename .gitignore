@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+./wagmiconfig
+./Components/Home/HomeShow.js
+./Components/Navbar/NavbarAdmin.js
+./constant/constants.js
+./constant/ABI.json
 
 # testing
 /coverage
