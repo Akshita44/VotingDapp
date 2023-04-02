@@ -7,8 +7,6 @@
 ./wagmiconfig
 ./Components/Home/HomeShow.js
 ./Components/Navbar/NavbarAdmin.js
-./constant/constants.js
-./constant/ABI.json
 
 # testing
 /coverage
