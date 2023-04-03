@@ -17,6 +17,11 @@ If you want to run the application as an admin and as a voter then you should fo
 ## PreRequisities:
 You should have a metamask account.
 
+## Deployment Link
+https://voting-dapp-ioepog6y0-akshita44.vercel.app/
+
+## Project Demonstration Link
+https://www.youtube.com/watch?v=OaHzDafJb0s
 ### Application Workflow
 
 The application consists of two users:
